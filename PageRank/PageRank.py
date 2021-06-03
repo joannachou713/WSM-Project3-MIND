@@ -71,11 +71,14 @@ class PageRank:
         """
         Sort the documents by their PageRank and output the top <arg0> documents
         """
+        # print(self.__inLinks)
+        # print(self.__PR)
         sortedPR = sorted([(PR, pages) for (pages, PR) in self.__PR.items()], reverse=True)
-        print("Top %d documents: " % numPages)
-        for n in range(numPages):
-            print("{:15}".format(sortedPR[n][1]) + '   ' + \
-                    '{0:.8f}'.format(sortedPR[n][0]))
+        # print("Top %d documents: " % numPages)
+        # for n in range(numPages):
+        #     print("{:15}".format(sortedPR[n][1]) + '   ' + \
+        #             '{0:.8f}'.format(sortedPR[n][0]))
+        return sortedPR
 
     def printPerplexities(self):
         """
@@ -109,12 +112,11 @@ class PageRank:
         perplexity = math.pow(2, entropy)
         return perplexity
 
-def main():
-    pr = PageRank("TFIDF_inlinks.txt")
-    # pr = PageRank("BM25_inlinks.txt")
+def main(filename, count):
+    pr = PageRank(filename)
     pr.computePR()
-    pr.printPerplexities()
-    pr.sortAndPrint(20)
+    result = pr.sortAndPrint(count)
+    return result
     
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
