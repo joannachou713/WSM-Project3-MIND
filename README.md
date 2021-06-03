@@ -21,7 +21,7 @@
 ### How to run these functions
 1. `run_pagerank.py`:
     ```
-    python3 run_pagerank.py -s <score_type> -t <threshold> -c <count>
+    $ python3 run_pagerank.py -s <score_type> -t <threshold> -c <count>
     ```
     If no parameter is given, then it will run in default mode
     ```
@@ -31,7 +31,7 @@
     ```
 2. `links_gen_bash.py`
     ```
-    python3 inlinks_gen_bash.py [-s <scoretype(tfidf/bm25)> -t <threshold(recommend 77 / 17)>] or [-d]
+    $ python3 inlinks_gen_bash.py [-s <scoretype(tfidf/bm25)> -t <threshold(recommend 77 / 17)>] or [-d]
     ```
     If `-d` is chosen, then the program will only show the description/summary of chosen scores.
     This function requires `/MINDnews` which contains each news' `html` file, and `/newsinfo` which contains top 100 related news according to each news counted in TFIDF/BM25
