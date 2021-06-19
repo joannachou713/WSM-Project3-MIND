@@ -54,8 +54,10 @@ def main(argv):
     if scoretype=='BM25' and threshold==77 : threshold = 17
 
     result_dict = {}
-    for filename in os.listdir('MINDnews'):
-        result_dict[filename[:-5]] = []
+    with open('newslist.txt') as newslist:
+        newslist = list(newslist)
+        for each in newslist:
+            result_dict[each[:-6]] = []
 
     with open(f'newsinfo/MIND_{scoretype}_TOP100.txt') as tfidf:
         relations = tfidf.read().split('\n')
