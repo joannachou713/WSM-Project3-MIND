@@ -4,13 +4,13 @@
 ```
 ├── MINDlarge_test
 ├── MINDlarge_train
-├── MINDnews              # contains each news' html file
 ├── newsinfo              # contains each news' top 100 news based on TFIDF and BM25
 ├── PageRank
 │   ├── PageRank.py
 │   ├── run.py            # PageRank.py's command line caller
 │   └── tfidfResult.py
 ├── .gitignore
+├── newslist.txt          # contains news' id list
 ├── links_gen_bash.py     # Generate news relations to count page rank (can run on terminal)
 ├── linksGenerator.py     # Generate news relations to count page rank (used in other .py file)
 ├── preprocessing.py      # no use, to be deleted
